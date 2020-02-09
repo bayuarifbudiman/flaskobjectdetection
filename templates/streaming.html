@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Violation | Peter The Parker</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/bootstrap.min.css') }}" >
+    <link href="{{ url_for('static', filename='css/index.css') }}"  rel="stylesheet" type="text/css" >
+</head>
+<body style="min-height: 100%;">
+    <header>
+        <nav class="nav nav-tabs" style="background-color: #fff;">
+        
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <img src="{{ url_for('static', filename='image/aptrg.jpg') }}" alt="APTRG" id="logo" style=" height: 40px;
+                    width: 40px;
+                    margin-left: 5px;
+                    margin-right: 5px;">
+                </li>
+                <li class="nav-item" id="active">
+                  <a class="nav-link active" id="link-active" href="streaming">Streaming</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="image">Violation photos</a>
+                </li>
+        </nav>
+    </header>
+    <hr class="mt-2 mb-5">
+    <div class="container" >
+        <img class = "col" src="{{ url_for('video_feed') }}">
+    </div>
+    <footer class= "card-footer" style="margin-top: 60px; text-align: center;">
+        <div class="col">
+            <img src="{{ url_for('static', filename='image/aptrg.jpg') }}" alt="APTRG" style=" height: 20px;
+            width: 20px;
+            ">
+            <a class="text-muted"><small>APTRG | Peter The Parker</small> </a>
+        </div>
+    </footer>
+</body>
+<script src="{{ url_for('static', filename='vendor/js/jquery-3.4.1.min.js') }}"></script>
+</html>

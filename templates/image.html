@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Streaming | Peter The Parker</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/bootstrap.min.css') }}" >
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" >
+</head>
+<body>
+    <header>
+
+        <nav class="nav nav-tabs" style="background-color: #fff;">
+
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <img src="{{ url_for('static', filename='image/aptrg.jpg') }}" alt="APTRG" style=" height: 40px;
+                    width: 40px;
+                    margin-left: 5px;
+                    margin-right: 5px;">
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link " id="link-active" href="streaming">Streaming</a>
+                </li>
+                <li class="nav-item" id="active">
+                  <a class="nav-link active" href="image">Violation photos</a>
+                </li>
+        </nav>
+        <img class = "col" src="{{ url_for('video_feed') }}" style = 'display: none;'>
+    </header>
+    <hr class="mt-2 mb-5">
+    <div class = "container" style="min-height: 600px;">
+        <div class="row text-center text-lg-left" >
+            {% for image in images %}
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='gallery/'+image) }}" alt="">
+                    </a>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div> 
+</body>
+<footer class= "card-footer" style="text-align: center;">
+
+    <div class="col">
+        <img src="{{ url_for('static', filename='image/aptrg.jpg') }}" alt="APTRG" style=" height: 20px;
+        width: 20px;
+        ">
+        <a class="text-muted"><small>APTRG | Peter The Parker</small> </a>
+    </div>
+</footer> 
+<script src="{{ url_for('static', filename='vendor/js/jquery-3.4.1.min.js') }}"></script>
+</html>
